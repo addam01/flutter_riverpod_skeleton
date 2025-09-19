@@ -2,6 +2,8 @@
 
 This project is a robust Flutter skeleton built with a modern, scalable architecture. It uses **Riverpod** for state management and **`go_router`** for declarative navigation, ensuring a clean separation of concerns. The codebase is designed to be easily extended and maintained.
 
+**Additional Info is located in the Wiki for Github, and Gitlab Repo - Plan - Wiki**
+
 ### Dependencies
 
 These are the primary packages that power the application's functionality:
