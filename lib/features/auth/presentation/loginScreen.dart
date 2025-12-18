@@ -135,7 +135,7 @@ class _LoginFormField extends StatelessWidget {
           labelText,
           style: TextStyle(
             color: Theme.of(context).textTheme.bodyLarge?.color,
-            fontSize: Theme.of(context).textTheme.bodyLarge?.fontSize,
+            fontSize: R.dimen.text_size_normal,
             fontWeight: FontWeight.bold,
           ),
         ),
