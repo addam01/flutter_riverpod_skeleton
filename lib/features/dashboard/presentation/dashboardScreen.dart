@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_skeleton/features/auth/providers/authNotifier.dart';
 import 'package:riverpod_skeleton/features/dashboard/models/post_response.dart';
 import 'package:riverpod_skeleton/features/dashboard/providers/postProvider.dart';
+import 'package:riverpod_skeleton/resources/resource_helper.dart';
 
 class DashboardScreen extends ConsumerWidget {
   const DashboardScreen({super.key});
@@ -22,7 +23,7 @@ class DashboardScreen extends ConsumerWidget {
     AsyncValue<List<PostResponse>> postsAsyncValue,
   ) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Dashboard')),
+      appBar: AppBar(title: Text(R.string.screen_dashboard_title)),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -49,7 +50,7 @@ class DashboardScreen extends ConsumerWidget {
               error:
                   (error, stack) => Center(
                     child: Text(
-                      'Error: $error',
+                      R.string.error_generic(error),
                       style: const TextStyle(color: Colors.red),
                     ),
                   ),
@@ -59,7 +60,7 @@ class DashboardScreen extends ConsumerWidget {
               onPressed: () {
                 ref.read(authProvider.notifier).logout();
               },
-              child: const Text('Logout'),
+              child: Text(R.string.text_logout),
             ),
             const SizedBox(height: 20),
           ],
@@ -70,7 +71,7 @@ class DashboardScreen extends ConsumerWidget {
           // Invalidate the postsProvider to trigger a re-fetch of data
           ref.invalidate(postProvider);
         },
-        tooltip: 'Refresh Posts',
+        tooltip: R.string.text_refresh,
         child: const Icon(Icons.refresh),
       ),
     );

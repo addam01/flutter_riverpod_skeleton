@@ -20,6 +20,36 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(errorDetails) =>
+      "An unexpected error occurred. ${errorDetails}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "error_generic": m0,
+    "error_invalid_email": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid email address.",
+    ),
+    "error_invalid_password_length": MessageLookupByLibrary.simpleMessage(
+      "Password must be at least 6 characters.",
+    ),
+    "error_login_failed": MessageLookupByLibrary.simpleMessage(
+      "Login failed. Please try again.",
+    ),
+    "error_password": MessageLookupByLibrary.simpleMessage(
+      "Password must contain at least one uppercase letter and one special character.",
+    ),
+    "error_required_field": MessageLookupByLibrary.simpleMessage(
+      "This field is required.",
+    ),
+    "screen_dashboard_title": MessageLookupByLibrary.simpleMessage("Dashboard"),
+    "screen_login_title": MessageLookupByLibrary.simpleMessage("Login Screen"),
+    "text_email": MessageLookupByLibrary.simpleMessage("Email"),
+    "text_loading": MessageLookupByLibrary.simpleMessage("Loading..."),
+    "text_login": MessageLookupByLibrary.simpleMessage("Login"),
+    "text_logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "text_password": MessageLookupByLibrary.simpleMessage("Password"),
+    "text_refresh": MessageLookupByLibrary.simpleMessage("Refresh"),
+    "text_submit": MessageLookupByLibrary.simpleMessage("Submit"),
+    "text_welcome": MessageLookupByLibrary.simpleMessage("Welcome to the App"),
+  };
 }

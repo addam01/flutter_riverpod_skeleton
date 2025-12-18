@@ -1,23 +1,24 @@
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:riverpod_skeleton/resources/resource_helper.dart';
 
 final emailValidator = FormBuilderValidators.compose(
   [
     FormBuilderValidators.required(),
     FormBuilderValidators.email(),
-    FormBuilderValidators.minLength(6, errorText: 'Email must be more than 6 characters')
+    FormBuilderValidators.minLength(6, errorText: R.string.error_invalid_email)
   ]
 );
 
 // A list of validators for the password field, including complexity rules.
 final passwordValidator = FormBuilderValidators.compose([
   FormBuilderValidators.required(),
-  FormBuilderValidators.minLength(8, errorText: 'Password must be more than 7 characters.'),
+  FormBuilderValidators.minLength(8, errorText: R.string.error_invalid_password_length),
   FormBuilderValidators.match(
     RegExp(r'(?=.*[A-Z])'),
-    errorText: 'Password must contain at least one uppercase letter.',
+    errorText: R.string.error_password,
   ),
   FormBuilderValidators.match(
     RegExp(r'(?=.*[!@#\$%^&*()_+-=|;:<>,.?/~`{}()\[\]])'),
-    errorText: 'Password must contain at least one special character.',
+    errorText: R.string.error_password,
   ),
 ]);

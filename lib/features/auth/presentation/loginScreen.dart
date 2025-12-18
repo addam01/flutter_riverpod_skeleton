@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:riverpod_skeleton/core/theme/app_images.dart';
+import 'package:riverpod_skeleton/resources/app_images.dart';
 import 'package:riverpod_skeleton/core/utils/validators.dart';
 import 'package:riverpod_skeleton/features/auth/providers/authNotifier.dart';
+import 'package:riverpod_skeleton/resources/resource_helper.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -42,25 +43,25 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     final authState = ref.watch(authProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
+      appBar: AppBar(title: Text(R.string.text_login)),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            SvgPicture.asset(AppImages.flutterBanner, height: 32,),
+            SvgPicture.asset(R.image.flutterBanner, height: 32,),
             FormBuilder(
               key: _formKey,
               child: Column(
                 children: [
                   _LoginFormField(
                     name: 'email',
-                    labelText: 'Email',
+                    labelText: R.string.text_email,
                     validator: emailValidator,
                   ),
                   const SizedBox(height: 16),
                   _LoginFormField(
                     name: 'password',
-                    labelText: 'Password',
+                    labelText: R.string.text_password,
                     obscureText: _isObscureText,
                     validator: passwordValidator,
                     suffixIcon: IconButton(

@@ -1,1 +1,18 @@
-{}
+{
+    "text_login": "Login",
+    "text_logout": "Logout",
+    "text_welcome": "Welcome to the App",
+    "text_email": "Email",
+    "text_password": "Password",
+    "text_refresh": "Refresh",
+    "text_submit": "Submit",
+    "text_loading": "Loading...",
+    "error_invalid_email": "Please enter a valid email address.",
+    "error_invalid_password_length": "Password must be at least 6 characters.",
+    "error_password": "Password must contain at least one uppercase letter and one special character.",
+    "error_required_field": "This field is required.",
+    "error_login_failed": "Login failed. Please try again.",
+    "error_generic": "An unexpected error occurred. {errorDetails}",
+    "screen_login_title": "Login Screen",
+    "screen_dashboard_title": "Dashboard"
+}

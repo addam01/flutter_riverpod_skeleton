@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:riverpod_skeleton/core/utils/base_config.dart';
+import 'package:riverpod_skeleton/generated/l10n.dart';
 import 'package:riverpod_skeleton/core/router/app_router.dart';
 import 'package:riverpod_skeleton/core/services/coreServices.dart';
-import 'package:riverpod_skeleton/core/theme/app_theme.dart';
-import 'package:riverpod_skeleton/features/splashscreen/presentation/splashScreen.dart';
+import 'package:riverpod_skeleton/resources/app_theme.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -37,6 +39,8 @@ class MyApp extends ConsumerWidget {
 
     return MaterialApp.router(
       title: 'Flutter Demo',
+      localizationsDelegates: AppLocalizationConfig.delegates,
+      supportedLocales: AppLocalizationConfig.locales,
       theme: AppTheme.lightTheme,
       routerConfig: router,
     );
